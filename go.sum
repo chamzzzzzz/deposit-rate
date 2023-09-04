@@ -1,0 +1,4 @@
+github.com/chamzzzzzz/supersimplesoup v0.0.0-20221231053842-410947423f1b h1:0UrLctyeCR4kSbIlj/lAfuXn5yQM8JL39s0mXR2b41Q=
+github.com/chamzzzzzz/supersimplesoup v0.0.0-20221231053842-410947423f1b/go.mod h1:01CUqzw2ZDsa0vK6IHw4s570kXbumrRtt6FA2LMr4Aw=
+golang.org/x/net v0.4.0 h1:Q5QPcMlvfxFTAPV0+07Xz/MpK9NTXu2VDUuy0FeMfaU=
+golang.org/x/net v0.4.0/go.mod h1:MBQ8lrhLObU/6UmLb4fmbmk5OcyYmqtbGd/9yIeKjEE=

@@ -42,16 +42,10 @@ func (i *ABC) GetDepositRate() (*DepositRate, error) {
 		return nil, err
 	}
 
-	table, err := div.Find("table", "class", "DataList")
-	if err != nil {
-		return nil, err
-	}
-
 	center, err := div.Find("center")
 	if err != nil {
 		return nil, err
 	}
-
 	re := regexp.MustCompile(`\d{4}年\d{1,2}月\d{1,2}日`)
 	match := re.FindString(center.Text())
 	if match == "" {
@@ -63,12 +57,16 @@ func (i *ABC) GetDepositRate() (*DepositRate, error) {
 	}
 	date := d.Format("2006-01-02")
 
-	record := &Record{
-		Date: date,
+	table, err := div.Find("table", "class", "DataList")
+	if err != nil {
+		return nil, err
 	}
 	trs := table.QueryAll("tr")
 	if len(trs) != 20 {
 		return nil, fmt.Errorf("trs len is not 20")
+	}
+	record := &Record{
+		Date: date,
 	}
 	for _, tr := range trs[5:11] {
 		tds := tr.QueryAll("td")
